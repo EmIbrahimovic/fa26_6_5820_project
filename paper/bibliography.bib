@@ -1,0 +1,149 @@
+% ===================== Disaggregated serving systems =====================
+
+@inproceedings{zhong2024distserve,
+  author    = {Yinmin Zhong and Shengyu Liu and Junda Chen and Jianbo Hu and Yibo Zhu and Xuanzhe Liu and Xin Jin and Hao Zhang},
+  title     = {{DistServe}: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving},
+  booktitle = {18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
+  year      = {2024},
+  pages     = {193--210},
+  publisher = {USENIX Association}
+}
+
+@inproceedings{patel2024splitwise,
+  author    = {Pratyush Patel and Esha Choukse and Chaojie Zhang and Aashaka Shah and {\'I}{\~n}igo Goiri and Saeed Maleki and Ricardo Bianchini},
+  title     = {Splitwise: Efficient Generative {LLM} Inference Using Phase Splitting},
+  booktitle = {2024 ACM/IEEE 51st Annual International Symposium on Computer Architecture (ISCA)},
+  year      = {2024},
+  eprint    = {2311.18677},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{qin2025mooncake,
+  author    = {Ruoyu Qin and Zheming Li and Weiran He and Jialei Cui and Feng Ren and Mingxing Zhang and Yongwei Wu and Weimin Zheng and Xinran Xu},
+  title     = {Mooncake: Trading More Storage for Less Computation {\textemdash} A {KVCache}-centric Architecture for Serving {LLM} Chatbot},
+  booktitle = {23rd USENIX Conference on File and Storage Technologies (FAST 25)},
+  year      = {2025},
+  pages     = {155--170},
+  address   = {Santa Clara, CA},
+  publisher = {USENIX Association},
+  url       = {https://www.usenix.org/conference/fast25/presentation/qin}
+}
+
+@inproceedings{sun2024llumnix,
+  author    = {Biao Sun and Ziming Huang and Hanyu Zhao and Wencong Xiao and Xinyi Zhang and Yong Li and Wei Lin},
+  title     = {Llumnix: Dynamic Scheduling for Large Language Model Serving},
+  booktitle = {18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
+  year      = {2024},
+  pages     = {173--192},
+  publisher = {USENIX Association}
+}
+
+@misc{ojewale2026netkv,
+  author        = {Mubarak Adetunji Ojewale},
+  title         = {{NetKV}: Network-Aware Decode Instance Selection for Disaggregated {LLM} Inference},
+  year          = {2026},
+  eprint        = {2606.03910},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2606.03910}
+}
+
+@misc{arun2026deflection,
+  author        = {Shrikara Arun and Anjaly Parayil and Srikant Bharadwaj and Renee St. Amant and Victor R{\"u}hle},
+  title         = {Towards Load-Aware Prefill Deflection for Disaggregated {LLM} Serving},
+  year          = {2026},
+  eprint        = {2607.02043},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2607.02043}
+}
+
+@misc{li2025flowkv,
+  author        = {Weiqing Li and Guochao Jiang and Xiangyong Ding and Zhangcheng Tao and Chuzhan Hao and Chenfeng Xu and Yuewei Zhang and Hao Wang},
+  title         = {{FlowKV}: A Disaggregated Inference Framework with Low-Latency {KV} Cache Transfer and Load-Aware Scheduling},
+  year          = {2025},
+  eprint        = {2504.03775},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2504.03775}
+}
+
+@misc{chen2024kvdirect,
+  author        = {Shiyang Chen and Rain Jiang and Dezhi Yu and Jinlai Xu and Mengyuan Chao and Fanlong Meng and Chenyu Jiang and Wei Xu and Hang Liu},
+  title         = {{KVDirect}: Distributed Disaggregated {LLM} Inference},
+  year          = {2024},
+  eprint        = {2501.14743},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2501.14743}
+}
+
+@misc{qin2026prfaas,
+  author        = {Ruoyu Qin and Weiran He and Yaoyu Wang and Zheming Li and Xinran Xu and Yongwei Wu and Weimin Zheng and Mingxing Zhang},
+  title         = {Prefill-as-a-Service: {KVCache} of Next-Generation Models Could Go Cross-Datacenter},
+  year          = {2026},
+  eprint        = {2604.15039},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2604.15039}
+}
+
+@misc{zhu2026objectcache,
+  author        = {Yu Zhu and Aditya Dhakal and Yunming Xiao and Dejan Milojicic and Gustavo Alonso},
+  title         = {{ObjectCache}: Layerwise Object-Storage Retrieval for {KV} Cache Reuse},
+  year          = {2026},
+  eprint        = {2605.22850},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2605.22850}
+}
+
+% ===================== Simulators and profiling data =====================
+
+@inproceedings{agrawal2024vidur,
+  author    = {Amey Agrawal and Nitin Kedia and Jayashree Mohan and Ashish Panwar and Nipun Kwatra and Bhargav S. Gulavani and Ramachandran Ramjee and Alexey Tumanov},
+  title     = {Vidur: A Large-Scale Simulation Framework for {LLM} Inference},
+  booktitle = {Proceedings of Machine Learning and Systems (MLSys)},
+  year      = {2024},
+  eprint    = {2405.05465},
+  archivePrefix = {arXiv}
+}
+
+@misc{feng2026frontier,
+  author        = {Yicheng Feng and Xin Tan and Yangtao Deng and Yimin Jiang and Yibo Zhu and Hong Xu},
+  title         = {Frontier: Towards Comprehensive and Accurate {LLM} Inference Simulation},
+  year          = {2026},
+  eprint        = {2605.21312},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2605.21312},
+  howpublished  = {\url{https://github.com/NetX-lab/Frontier}}
+}
+
+@misc{cho2026llmservingsim,
+  author        = {Jaehong Cho and Hyunmin Choi and Guseul Heo and Jongse Park},
+  title         = {{LLMServingSim} 2.0: A Unified Simulator for Heterogeneous and Disaggregated {LLM} Serving Infrastructure},
+  year          = {2026},
+  eprint        = {2602.23036},
+  archivePrefix = {arXiv},
+  note          = {arXiv:2602.23036}
+}
+
+@misc{splitwisesim,
+  author       = {Pratyush Patel and others},
+  title        = {{SplitwiseSim}: {LLM} Serving Cluster Simulator},
+  year         = {2024},
+  howpublished = {\url{https://github.com/Mutinifni/splitwise-sim}},
+  note         = {Profiling data in \texttt{data/perf\_model.csv}}
+}
+
+% ===================== Traces =====================
+
+@misc{mooncaketraces,
+  author       = {{Moonshot AI}},
+  title        = {Mooncake Request Traces},
+  year         = {2025},
+  howpublished = {\url{https://github.com/kvcache-ai/Mooncake}},
+  note         = {Anonymized request traces released with the FAST 2025 paper, in the \texttt{FAST25-release} directory}
+}
+
+@misc{azurellmtrace2023,
+  author       = {{Microsoft Azure}},
+  title        = {Azure {LLM} Inference Trace 2023},
+  year         = {2023},
+  howpublished = {\url{https://github.com/Azure/AzurePublicDataset}},
+  note         = {Code and conversation traces, released with Splitwise}
+}
