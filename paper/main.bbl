@@ -1,0 +1,52 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{AKM{\etalchar{+}}24}
+
+\bibitem[AKM{\etalchar{+}}24]{agrawal2024vidur}
+Amey Agrawal, Nitin Kedia, Jayashree Mohan, Ashish Panwar, Nipun Kwatra, Bhargav~S. Gulavani, Ramachandran Ramjee, and Alexey Tumanov.
+\newblock Vidur: A large-scale simulation framework for {LLM} inference.
+\newblock In {\em Proceedings of Machine Learning and Systems (MLSys)}, 2024.
+
+\bibitem[FTD{\etalchar{+}}26]{feng2026frontier}
+Yicheng Feng, Xin Tan, Yangtao Deng, Yimin Jiang, Yibo Zhu, and Hong Xu.
+\newblock Frontier: Towards comprehensive and accurate {LLM} inference simulation.
+\newblock \url{https://github.com/NetX-lab/Frontier}, 2026.
+\newblock arXiv:2605.21312.
+
+\bibitem[{Mic}23]{azurellmtrace2023}
+{Microsoft Azure}.
+\newblock Azure {LLM} inference trace 2023.
+\newblock \url{https://github.com/Azure/AzurePublicDataset}, 2023.
+\newblock Code and conversation traces, released with Splitwise.
+
+\bibitem[{Moo}25]{mooncaketraces}
+{Moonshot AI}.
+\newblock Mooncake request traces.
+\newblock \url{https://github.com/kvcache-ai/Mooncake}, 2025.
+\newblock Anonymized request traces released with the FAST 2025 paper, in the \texttt{FAST25-release} directory.
+
+\bibitem[Oje26]{ojewale2026netkv}
+Mubarak~Adetunji Ojewale.
+\newblock {NetKV}: Network-aware decode instance selection for disaggregated {LLM} inference, 2026.
+\newblock arXiv:2606.03910.
+
+\bibitem[PCZ{\etalchar{+}}24]{patel2024splitwise}
+Pratyush Patel, Esha Choukse, Chaojie Zhang, Aashaka Shah, {\'I}{\~n}igo Goiri, Saeed Maleki, and Ricardo Bianchini.
+\newblock Splitwise: Efficient generative {LLM} inference using phase splitting.
+\newblock In {\em 2024 ACM/IEEE 51st Annual International Symposium on Computer Architecture (ISCA)}, 2024.
+
+\bibitem[QLH{\etalchar{+}}25]{qin2025mooncake}
+Ruoyu Qin, Zheming Li, Weiran He, Jialei Cui, Feng Ren, Mingxing Zhang, Yongwei Wu, Weimin Zheng, and Xinran Xu.
+\newblock Mooncake: Trading more storage for less computation {\textemdash} a {KVCache}-centric architecture for serving {LLM} chatbot.
+\newblock In {\em 23rd USENIX Conference on File and Storage Technologies (FAST 25)}, pages 155--170, Santa Clara, CA, 2025. USENIX Association.
+
+\bibitem[SHZ{\etalchar{+}}24]{sun2024llumnix}
+Biao Sun, Ziming Huang, Hanyu Zhao, Wencong Xiao, Xinyi Zhang, Yong Li, and Wei Lin.
+\newblock Llumnix: Dynamic scheduling for large language model serving.
+\newblock In {\em 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)}, pages 173--192. USENIX Association, 2024.
+
+\bibitem[ZLC{\etalchar{+}}24]{zhong2024distserve}
+Yinmin Zhong, Shengyu Liu, Junda Chen, Jianbo Hu, Yibo Zhu, Xuanzhe Liu, Xin Jin, and Hao Zhang.
+\newblock {DistServe}: Disaggregating prefill and decoding for goodput-optimized large language model serving.
+\newblock In {\em 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)}, pages 193--210. USENIX Association, 2024.
+
+\end{thebibliography}
