@@ -1,0 +1,12 @@
+# Sweep rho directly by capping per-transfer bandwidth (e.g. TCP / software
+# transfer engines), across workloads with different prompt lengths.
+name: rho
+base:
+  workload: {max_requests: 1000}
+grid:
+  network.kv_flow_max_gbps: [5, 10, 20, 40, 80, 400]
+  workload.path:
+    - data/traces/mooncake_arxiv.jsonl
+    - data/traces/azure_code_2023.csv
+    - data/traces/azure_conv_2023.csv
+  router.policy: [early, late, threshold]

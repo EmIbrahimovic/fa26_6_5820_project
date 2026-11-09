@@ -1,0 +1,10 @@
+# Router staleness x burstiness of background traffic at a congested setting.
+name: staleness
+base:
+  network: {nics_per_server: 1, oversubscription: 4}
+  background: {load: 0.4}
+  workload: {max_requests: 1000}
+grid:
+  router.staleness_s: [0.0, 0.001, 0.01, 0.1, 1.0]
+  background.duty_cycle: [1.0, 0.2]
+  router.policy: [early, late, threshold]

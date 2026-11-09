@@ -1,0 +1,72 @@
+# Default configuration. Every other config overrides a subset of these keys.
+# Units: seconds, bytes, tokens unless the key name says otherwise.
+
+seed: 1
+
+cluster:
+  n_servers: 16              # 16 x 8 H100 = 128 GPUs
+  instances_per_server: 2    # TP=4 -> 2 instances per 8-GPU server
+  servers_per_rack: 4        # 4 racks (plan §9.4 default)
+  pd_ratio: [1, 1]           # prefill : decode instances
+  # How prefill and decode instances are laid out:
+  #   rack_mixed     - every rack holds the P:D mix, servers are homogeneous
+  #                    (same-rack decode targets exist, no same-server ones)
+  #   by_server      - prefill servers first, then decode servers (mostly cross-rack)
+  #   instance_mixed - alternate P/D instances (same-server targets exist)
+  placement: by_server
+
+network:
+  n_spines: 4
+  nic_gbps: 400
+  nics_per_server: 8         # one 400G NIC per GPU; used to size the fabric
+  kv_nics_per_instance: 1    # NICs a KV transfer may use (plan §9.3)
+  oversubscription: 1.0      # leaf down:up capacity ratio (1, 2, 4, 8 ...)
+  nvlink_GBps: 900           # intra-server transfers
+  kv_flow_max_gbps: null     # optional per-transfer cap (e.g. transfer-engine limit)
+
+background:
+  load: 0.0                  # mean offered load as a fraction of leaf uplink capacity
+  duty_cycle: 1.0            # 1.0 = steady; 0.2 = on 20% of the time at 5x the rate
+  period_s: 0.05             # mean on+off period of each source
+  sources_per_rack: 4
+
+model:
+  name: llama-3.1-70b
+  n_layers: 80
+  kv_bytes_per_token: 327680 # 80 layers * 8 heads * 128 dims * 2 (K,V) * 2 bytes
+
+profile:
+  prefill_csv: data/profiles/prefill_llama70b_h100_tp4.csv
+  decode_csv: data/profiles/decode_llama70b_h100_tp4.csv
+  decode_ref_ctx: 640        # context per request at which decode table was measured
+  decode_eff_hbm_GBps: 8000  # effective HBM bw of a TP=4 instance for extra KV reads
+
+instances:
+  prefill_max_batch_tokens: 8192  # batch queued prompts up to this many tokens
+  decode_kv_capacity_gb: 150      # KV memory per decode instance (4x80GB - weights - slack)
+  decode_max_batch: 256
+
+router:
+  policy: late               # early | late | threshold
+  threshold: 1.0             # threshold policy: bind early iff estimated rho >= this
+  staleness_s: 0.01          # router snapshot refresh interval (0 = live view)
+  decode_select: network     # network: transfer + decode cost; load: least-loaded only
+  mem_wait_penalty_s: 2.0    # cost added to a decode instance without free KV memory
+
+workload:
+  kind: mooncake             # mooncake | azure | synthetic
+  path: data/traces/mooncake_arxiv.jsonl
+  skip: 0
+  max_requests: 2000
+  min_prompt: null
+  max_prompt: null
+  rate_scale: 1.0            # multiply the trace's arrival rate
+  target_rps: null           # or set an absolute arrival rate
+  # synthetic only:
+  rate: 5.0
+  prompt_tokens: 4096
+  prompt_sigma: 0.0
+  output_tokens: 128
+
+output:
+  dir: results

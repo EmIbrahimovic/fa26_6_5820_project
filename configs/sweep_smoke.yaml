@@ -1,0 +1,9 @@
+# Tiny sweep to check the pipeline end to end (~1 min).
+name: smoke
+base:
+  network: {nics_per_server: 1}
+  workload: {max_requests: 300}
+grid:
+  network.oversubscription: [1, 8]
+  background.load: [0.0, 0.6]
+  router.policy: [early, late, threshold]

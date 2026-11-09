@@ -1,0 +1,11 @@
+# Oversubscription x background load, KV over a frontend-style fabric
+# (one 400G NIC per server sizes the leaf-spine), all transfers cross-rack.
+name: oversub_bg
+base:
+  network: {nics_per_server: 1}
+  cluster: {placement: by_server}
+  workload: {max_requests: 1000}
+grid:
+  network.oversubscription: [1, 2, 4, 8]
+  background.load: [0.0, 0.3, 0.6]
+  router.policy: [early, late, threshold]
