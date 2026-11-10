@@ -1,0 +1,11 @@
+# Prefill-heavy, short-output synthetic workload: long prompts
+# (log-normal around 8k tokens), 16 output tokens.
+name: prefill_heavy_long
+base:
+  network: {nics_per_server: 1}
+  background: {load: 0.3}
+  workload: {kind: synthetic, max_requests: 1500, prompt_tokens: 8192, prompt_sigma: 0.5, output_tokens: 16}
+grid:
+  workload.rate: [3, 8, 13]
+  network.oversubscription: [1, 4, 8]
+  router.policy: [early, late, threshold]

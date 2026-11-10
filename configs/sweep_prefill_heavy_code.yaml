@@ -1,0 +1,12 @@
+# Prefill-heavy, short-output workload: Azure code trace 2023
+# (median prompt ~1.5k tokens, median output 13). Arrival rate is swept
+# because the native 2.6 req/s barely loads 16 prefill instances.
+name: prefill_heavy_code
+base:
+  network: {nics_per_server: 1}
+  background: {load: 0.3}
+  workload: {kind: trace, path: data/traces/azure_code_2023.csv, max_requests: 2000}
+grid:
+  workload.target_rps: [10, 40, 70]
+  network.oversubscription: [1, 4, 8]
+  router.policy: [early, late, threshold]
